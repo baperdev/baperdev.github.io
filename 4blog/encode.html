@@ -1,1 +1,32 @@
-
+<html>
+	<body>
+		URL : <input type="text" name="url" id="url" onkeyup="generate()" size="100"/>
+		<br>
+		<br>
+		Name : <input type="text" name="nama" id="nama" size="100" onkeyup="generate()"/>
+		<br>
+		<br>
+		Result : <input type="text" name="result" id="result" size="100" onfocus="this.select();" onmouseup="return false;"/>
+		<br>
+		<br>
+		Ori   : <input type="text" name="ori" id="ori" size="150"/>
+		<script type="text/javascript" src="baseV2.js"></script>
+		<script type="text/javascript">
+			var url_ = 'https://pricexpose.blogspot.com/2017/05/most-expensive-furniture-brands-in-world.html';
+			var result = document.getElementById("result");
+			var or = document.getElementById("ori");
+			var url = document.getElementById("url");
+			var nama = document.getElementById("nama");
+			function generate()
+			{
+				var enk = BaseV2.encode(url.value);
+				result.value = url_ + "?en=v2&ori="+nama.value+"&url=" + enk;
+				or.value = BaseV2.decode(enk);
+			}
+			function terfokus()
+			{
+				//alert('fokus');
+			}
+		</script>
+	</body>
+</html>
